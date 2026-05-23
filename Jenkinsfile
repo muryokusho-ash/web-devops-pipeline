@@ -8,7 +8,7 @@ pipeline{
             }
         }
         
-        stage("Build Docker Image") {
+        stage("Run Docker container") {
             steps {
                 bat 'docker run -d -p 3000:80 --name web-dev-container web-dev-img'
             }
