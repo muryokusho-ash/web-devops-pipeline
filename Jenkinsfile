@@ -3,13 +3,13 @@ pipeline{
 
     stages {
         stage("Build Docker Image") {
-            step {
+            steps {
                 bat 'docker build -t web-dev-img ./'
             }
         }
         
         stage("Build Docker Image") {
-            step {
+            steps {
                 bat 'docker run -d -p 3000:80 --name web-dev-container web-dev-img'
             }
         }
